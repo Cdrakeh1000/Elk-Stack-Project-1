@@ -1,7 +1,7 @@
 # Elk-Stack-Project-1
 ***AUTOMATED ELK STACK DEPLOYMENT**
 
-For this cloud environment project I was responsible for creating virtual networks, resource groups, network security groups, and virtual machines (three web VMs, a jumpbox, and an Elk server) that were distributed along with a load balancer on Microsoft Azure. I deployed an Elk Stack VM with Kibana using an ansible container which I also developed then installed Filebeat and Metricbeat to monitor vulnerable web servers that my Red Team was using
+For this cloud environment project I was responsible for creating virtual networks, resource groups, network security groups, and virtual machines (three web VMs, a jumpbox, and an Elk server) that were distributed along with a load balancer on Microsoft Azure. I deployed an Elk Stack VM with Kibana using an ansible container which I also developed then installed Filebeat and Metricbeat to monitor vulnerable web servers that my Red Team was using.. 
 
 These files have been tested and used to generate a live ELK deployment on Azure. Thy can be used to recreate the entire deployment pictured.
 
