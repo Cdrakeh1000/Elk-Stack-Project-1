@@ -7,14 +7,15 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 <img width="1003" alt="VNets" src="https://user-images.githubusercontent.com/95924912/145869619-122bedb1-b655-4a28-8248-7cc2bd2be31e.png">
 
+<img width="912" alt="Resource Groups" src="https://user-images.githubusercontent.com/95924912/145872877-66a87ba9-3e42-4ef7-b748-43e7056bc571.png">
 
-![Resource Groups](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/Resource Groups.png)
 
-![Security Groups](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/Security Groups.png)
+<img width="907" alt="Security Groups" src="https://user-images.githubusercontent.com/95924912/145872903-57ee8085-8165-425c-b179-8da66e99bfa6.png">
 
-![Virtual Machines](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/Virtual Machines.png)
+<img width="906" alt="Virtual Machines" src="https://user-images.githubusercontent.com/95924912/145872931-f9fc6730-17a0-419c-8627-42da4ae7881a.png">
 
-![Load Balancer](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/Load Balancer.png)
+<img width="1019" alt="Load Balancer" src="https://user-images.githubusercontent.com/95924912/145872970-ebe3b436-15c7-4094-99be-130237a600e7.png">
+
 
 
 
@@ -22,7 +23,8 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 **CLOUD SECURITY VIRTUALIZATION NETWORK DIAGRAM **
 
-![Cloud Security Network Diagram](/Users/christopherhaverick/Desktop/Elk_Stack_Project/diagrams/Cloud Security Network Diagram.png)
+<img width="832" alt="Cloud Security Network Diagram" src="https://user-images.githubusercontent.com/95924912/145873006-967bc116-5b49-4f2f-88bc-d9774b4d93de.png">
+
 
 
 
@@ -41,9 +43,10 @@ On day 1 I configured an ELK server within my virtual network. Specifically, I:
 
 **PEERING THE vNETS**
 
-![Elk to Red vNET peering](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/Elk to Red vNET peering.png)
+<img width="616" alt="Elk to Red vNET peering" src="https://user-images.githubusercontent.com/95924912/145873075-df0b96b8-ab61-487e-84a0-ebbff67570c6.png">
 
-![Red to Elk vNET peering](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/Red to Elk vNET peering.png)
+<img width="617" alt="Red to Elk vNET peering" src="https://user-images.githubusercontent.com/95924912/145873125-1fb82655-93de-47a5-8e12-f04970c7535d.png">
+
 
 **DOWNLOADING AND CONFIGURING THE CONTAINER**
 
@@ -57,9 +60,10 @@ On day 1 I configured an ELK server within my virtual network. Specifically, I:
 
 **Logging into /etc/ansible/hosts**
 
-![logging into ansible hosts](/Users/christopherhaverick/Desktop/Elk_Stack_Project/ansible/logging into ansible hosts.png)
+<img width="896" alt="logging into ansible hosts" src="https://user-images.githubusercontent.com/95924912/145873181-6217be42-b75d-4ad5-8e22-524641cc2212.png">
 
-![:etc:ansible:hosts](/Users/christopherhaverick/Desktop/Elk_Stack_Project/ansible/:etc:ansible:hosts.png)
+<img width="733" alt=":etc:ansible:hosts" src="https://user-images.githubusercontent.com/95924912/145873262-ed9e56a7-6f25-41d5-8827-4639039ad181.png">
+
 
 6. Once I created the [elk] group, I created a playbook to configure it called install-elk.yml
 
@@ -126,16 +130,19 @@ On day 1 I configured an ELK server within my virtual network. Specifically, I:
 
 7. Next I ran the playbook using the command: ansible-playbook install-elk.yml. This will enable the docker service on boot, so that when I restart the ElkVM the docker service starts up automatically. 
 
-![ansible-playbook install-elk yml](/Users/christopherhaverick/Desktop/Elk_Stack_Project/ansible/ansible-playbook install-elk yml.png)
+<img width="896" alt="ansible-playbook install-elk yml" src="https://user-images.githubusercontent.com/95924912/145873333-bf67de94-9e58-4f8f-a5b7-19f1205370af.png">
+
 
 8. Next I restricted access to the ElkVM using Azure's network security groups. The ELK stack's web server runs on port 5601. I opened my virutal network's existing NSG and created an incoming rule for my security group that allows TCP traffic over port 5601 from my public IP address. 
 
-![ElkVM NSG 5601 rule](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/ElkVM NSG 5601 rule.png)
+<img width="1061" alt="ElkVM NSG 5601 rule" src="https://user-images.githubusercontent.com/95924912/145873372-2396dbb2-5484-4b95-a626-719b3ab03302.png">
+
 
 9. Finally, I verified that i could access my server by navigating to {ElkVM public IP}:5601/app/kibana
 
-![Day 1 Kibana](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/Day 1 Kibana.png)
 
+
+<img width="1264" alt="Day 1 Kibana" src="https://user-images.githubusercontent.com/95924912/145873401-bd650166-0461-4434-aae2-689e22564277.png">
 
 
 
@@ -153,9 +160,11 @@ The ELK monitoring server is installed and configured I added Filebeat and Metri
 
 5. In the Filebeat config file I replaced the IP address with the private IP address of my ELK machine in two places
 
-   ![filebeat config file 1](/Users/christopherhaverick/Desktop/Elk_Stack_Project/ansible/filebeat config file 1.png)
+<img width="684" alt="filebeat config file 1" src="https://user-images.githubusercontent.com/95924912/145873452-850ea511-423d-4dfa-a7e9-185615c40889.png">
 
-   ![filebeat config file 2](/Users/christopherhaverick/Desktop/Elk_Stack_Project/ansible/filebeat config file 2.png)
+
+  <img width="684" alt="filebeat config file 2" src="https://user-images.githubusercontent.com/95924912/145873494-9566ae3a-1fed-4716-aa8d-672ded7aef4b.png">
+
 
    
 
@@ -195,13 +204,16 @@ The ELK monitoring server is installed and configured I added Filebeat and Metri
       enabled: yes
 ```
 
-7. After creating and saving this playbook I ran it with the command ansible-playbook filbert-playbook.yml
+7. After creating and saving this playbook I ran it with the command ansible-playbook filbeat-playbook.yml
 
-![ansible-playbook filebeat-playbook yml](/Users/christopherhaverick/Desktop/Elk_Stack_Project/ansible/ansible-playbook filebeat-playbook yml.png)
+<img width="890" alt="ansible-playbook filebeat-playbook yml" src="https://user-images.githubusercontent.com/95924912/145873580-e5866caa-8d93-4dca-8916-4c83dc241ddb.png">
+
+
 
 8. Then I confirmed that the ELK stack was receiving logs from my DVWA machines on Kibana by navigating to 'Add log data' - 'System logs' - 'System logs dashboard'
 
-![Filebeat Day 2](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/Filebeat Day 2.png)
+<img width="1377" alt="Filebeat Day 2" src="https://user-images.githubusercontent.com/95924912/145873634-f5604864-72dc-4376-8337-51b73c75c31b.png">
+
 
 9. Next I installed Metricbeat in the same method of installing Filebeat. I went into the metricbeat.config.yml file and changed the IP adress in the output.elasticsearch and setup.kibana parts of the file to the private IP address of the ElkVM. Then I created a metricbeat-playbook.yml file and ran the playbook. 
 
@@ -247,9 +259,8 @@ The ELK monitoring server is installed and configured I added Filebeat and Metri
 
 10. Finally I made sure metric data was being received by the ELK server by navigating Kibana by going to 'Add Metric Data' - 'Docker Metrics' - 'Docker Metrics Dashboard'
 
+<img width="1275" alt="metricbeat day 2 1" src="https://user-images.githubusercontent.com/95924912/145873681-3541ad3e-37b9-4b9c-ac39-5948942501bc.png">
 
+<img width="1240" alt="metricbeat day 2 2" src="https://user-images.githubusercontent.com/95924912/145873721-2d43d254-b828-4871-84a7-bfe763340e1b.png">
 
-![metricbeat day 2.1](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/metricbeat day 2.1.png)
-
-![metricbeat day 2.2](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/metricbeat day 2.2.png)
 
