@@ -5,7 +5,8 @@ For this cloud environment project I was responsible for creating virtual networ
 
 These files have been tested and used to generate a live ELK deployment on Azure. Thy can be used to recreate the entire deployment pictured.
 
-![VNets](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/VNets.png)
+<img width="1003" alt="VNets" src="https://user-images.githubusercontent.com/95924912/145869619-122bedb1-b655-4a28-8248-7cc2bd2be31e.png">
+
 
 ![Resource Groups](/Users/christopherhaverick/Desktop/Elk_Stack_Project/Images/Resource Groups.png)
 
